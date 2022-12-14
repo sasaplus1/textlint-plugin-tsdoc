@@ -3,6 +3,9 @@
   "description": "textlint plugin for tsdoc",
   "version": "0.0.0",
   "author": "sasa+1 <sasaplus1@gmail.com>",
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
