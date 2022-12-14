@@ -3,8 +3,11 @@
   "compilerOptions": {
     "declaration": true,
     "module": "CommonJS",
+    "outDir": "./dist",
     "sourceMap": true,
     "target": "ESNext"
   },
-  "files": []
+  "include": [
+    "./src/*.ts"
+  ]
 }
