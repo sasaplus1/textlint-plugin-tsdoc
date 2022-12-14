@@ -3,6 +3,9 @@
   "description": "textlint plugin for tsdoc",
   "version": "0.0.0",
   "author": "sasa+1 <sasaplus1@gmail.com>",
+  "dependencies": {
+    "@microsoft/tsdoc": "^0.14.2"
+  },
   "devDependencies": {
     "@textlint/ast-tester": "^12.2.3",
     "@textlint/types": "^12.2.3",
