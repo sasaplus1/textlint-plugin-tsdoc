@@ -23,6 +23,18 @@
     "node": ">=8.3.0"
   },
   "license": "MIT",
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "none",
+    "overrides": [
+      {
+        "files": "*.json",
+        "options": {
+          "parser": "json-stringify"
+        }
+      }
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/sasaplus1/textlint-plugin-tsdoc.git"
