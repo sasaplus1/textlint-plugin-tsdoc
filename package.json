@@ -40,7 +40,10 @@
     "url": "https://github.com/sasaplus1/textlint-plugin-tsdoc.git"
   },
   "scripts": {
+    "build": "tsc",
     "fix": "eslint --fix . && prettier --write .",
-    "lint": "eslint . && prettier --check ."
+    "lint": "eslint . && prettier --check .",
+    "pretest": "tsc",
+    "test": "node --test"
   }
 }
