@@ -1,6 +1,7 @@
 import type { DocNode } from '@microsoft/tsdoc';
 import type { AnyTxtNode } from '@textlint/ast-node-types';
 
+import { ASTNodeTypes } from '@textlint/ast-node-types';
 import { DocExcerpt, TSDocParser } from '@microsoft/tsdoc';
 
 /**
@@ -23,7 +24,7 @@ export function parse(docCommentText: string): AnyTxtNode {
   const tailChild = children.at(-1);
 
   const documentNode = {
-    type: 'Document',
+    type: ASTNodeTypes.Document,
     children,
     raw: children.map(child => child.raw).join('')
   } as AnyTxtNode;
@@ -66,7 +67,7 @@ export function traverse(docNode: DocNode): AnyTxtNode | null {
 
   if (docNode instanceof DocExcerpt) {
     if (docNode.excerptKind === 'PlainText') {
-      result.type = 'Str';
+      result.type = ASTNodeTypes.Str;
     }
 
     const tokens = docNode.content.tokens;
