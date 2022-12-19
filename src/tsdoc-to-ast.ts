@@ -26,7 +26,7 @@ export function parse(docCommentText: string): AnyTxtNode {
   const documentNode = {
     type: ASTNodeTypes.Document,
     children,
-    raw: children.map(child => child.raw).join('')
+    raw: children.map((child) => child.raw).join('')
   } as AnyTxtNode;
 
   if (headChild && tailChild) {
@@ -39,10 +39,7 @@ export function parse(docCommentText: string): AnyTxtNode {
     const tailRange = tailChild.range.at(-1);
 
     if (headRange && tailRange) {
-      documentNode.range = [
-        headRange,
-        tailRange
-      ];
+      documentNode.range = [headRange, tailRange];
     }
   }
 
@@ -56,10 +53,7 @@ export function parse(docCommentText: string): AnyTxtNode {
  * @returns node for textlint or null
  */
 export function traverse(docNode: DocNode): AnyTxtNode | null {
-  const children = docNode
-    .getChildNodes()
-    .map(traverse)
-    .filter(isNonNullable);
+  const children = docNode.getChildNodes().map(traverse).filter(isNonNullable);
 
   const result = {} as AnyTxtNode;
 
@@ -72,9 +66,7 @@ export function traverse(docNode: DocNode): AnyTxtNode | null {
 
     const tokens = docNode.content.tokens;
 
-    result.value = tokens.map(
-      token => token.toString()
-    ).join('');
+    result.value = tokens.map((token) => token.toString()).join('');
     result.raw = result.value;
 
     // sometimes
@@ -99,10 +91,7 @@ export function traverse(docNode: DocNode): AnyTxtNode | null {
           column: tailLocation.column - 1
         }
       };
-      result.range = [
-        headToken.range.pos,
-        tailToken.range.end
-      ];
+      result.range = [headToken.range.pos, tailToken.range.end];
     }
   }
 
@@ -122,16 +111,11 @@ export function traverse(docNode: DocNode): AnyTxtNode | null {
       const tailRange = tailChild.range.at(-1);
 
       if (headRange && tailRange) {
-        result.range = [
-          headRange,
-          tailRange
-        ];
+        result.range = [headRange, tailRange];
       }
     }
 
-    result.raw = children.map(
-      child => child.value || child.raw
-    ).join('');
+    result.raw = children.map((child) => child.value || child.raw).join('');
   }
 
   return result;

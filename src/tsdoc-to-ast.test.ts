@@ -5,10 +5,11 @@ import { test, isTxtAST } from '@textlint/ast-tester';
 
 import { parse } from './tsdoc-to-ast';
 
-describe(__filename, function() {
-  describe('parse', function() {
-    it('return valid AST', function() {
-      const AST = parse(`
+describe(__filename, function () {
+  describe('parse', function () {
+    it('return valid AST', function () {
+      const AST = parse(
+        `
         /**
          * a と b を足して返します。
          *
@@ -38,10 +39,11 @@ describe(__filename, function() {
         function sum(a: number, b: number): number {
           return a + b;
         }
-      `.trim());
+      `.trim()
+      );
 
       assert(isTxtAST(AST));
-      assert.doesNotThrow(function() {
+      assert.doesNotThrow(function () {
         test(AST);
       });
     });

@@ -23,7 +23,7 @@ overrides.push({
   files: ['./**/*.{ts,tsx}'],
   plugins: [...typescriptPlugins],
   rules: {
-    ...tsdocRules,
+    ...tsdocRules
   },
   settings: {
     node: {
@@ -38,7 +38,7 @@ overrides.push({
   files: ['./**/*.test.ts'],
   plugins: [...typescriptPlugins],
   rules: {
-    ...tsdocRules,
+    ...tsdocRules
   },
   settings: {
     node: {
@@ -49,7 +49,7 @@ overrides.push({
 });
 
 config.env = {
-  node: true,
+  node: true
 };
 config.extends = ['eslint:recommended', 'plugin:node/recommended', 'prettier'];
 config.overrides = overrides;

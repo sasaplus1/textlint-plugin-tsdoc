@@ -8,22 +8,31 @@ import ts from 'typescript';
  * @param fileName - file name
  * @returns extracted JSDoc style comments
  */
-export function extractJSDocStyleComments(sourceText: string, languageVersionOrOptions: ts.ScriptTarget | ts.CreateSourceFileOptions, fileName = '<typescript>') {
-  const sourceFile = ts.createSourceFile(fileName, sourceText, languageVersionOrOptions);
+export function extractJSDocStyleComments(
+  sourceText: string,
+  languageVersionOrOptions: ts.ScriptTarget | ts.CreateSourceFileOptions,
+  fileName = '<typescript>'
+) {
+  const sourceFile = ts.createSourceFile(
+    fileName,
+    sourceText,
+    languageVersionOrOptions
+  );
   const text = sourceFile.getSourceFile().getFullText();
 
-  const commentRanges: { pos: number, end: number }[] = [];
+  const commentRanges: { pos: number; end: number }[] = [];
 
-  sourceFile.forEachChild(function(child) {
+  sourceFile.forEachChild(function (child) {
     commentRanges.push(
-      ...getCommentRanges(child, text).map(
-        range => ({ pos: range.pos, end: range.end })
-      )
+      ...getCommentRanges(child, text).map((range) => ({
+        pos: range.pos,
+        end: range.end
+      }))
     );
   });
 
   const jsdocComments = unique(
-    commentRanges.map(function(range) {
+    commentRanges.map(function (range) {
       const { pos, end } = range;
 
       return text.slice(pos, end);
