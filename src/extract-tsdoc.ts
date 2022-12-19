@@ -55,12 +55,15 @@ export function getCommentRanges(node: ts.Node, text: string) {
   result.push(...(ts.getTrailingCommentRanges(text, node.pos) || []));
   result.push(...(ts.getLeadingCommentRanges(text, node.pos) || []));
 
-  return result.filter(
-    (comment) =>
-      text.charCodeAt(comment.pos + 1) === 0x2a &&
-      text.charCodeAt(comment.pos + 2) === 0x2a &&
-      text.charCodeAt(comment.pos + 3) !== 0x2f
-  );
+  return result.filter(function (comment) {
+    const { pos } = comment;
+
+    return (
+      text.charCodeAt(pos + 1) === 0x2a /* * */ &&
+      text.charCodeAt(pos + 2) === 0x2a /* * */ &&
+      text.charCodeAt(pos + 3) !== 0x2f /* / */
+    );
+  });
 }
 
 /**
