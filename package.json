@@ -46,9 +46,11 @@
     "build": "tsc",
     "fix": "run-p --print-label fix:*",
     "fix:eslint": "eslint --fix .",
+    "fix:fixpack": "npx fixpack",
     "fix:prettier": "prettier --write .",
     "lint": "run-p --print-label lint:*",
     "lint:eslint": "eslint .",
+    "lint:fixpack": "npx fixpack --dryRun",
     "lint:prettier": "prettier --check .",
     "pretest": "tsc",
     "test": "node --test"
