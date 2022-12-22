@@ -44,8 +44,12 @@
   },
   "scripts": {
     "build": "tsc",
-    "fix": "eslint --fix . && prettier --write .",
-    "lint": "eslint . && prettier --check .",
+    "fix": "run-p --print-label fix:*",
+    "fix:eslint": "eslint --fix .",
+    "fix:prettier": "prettier --write .",
+    "lint": "run-p --print-label lint:*",
+    "lint:eslint": "eslint .",
+    "lint:prettier": "prettier --check .",
     "pretest": "tsc",
     "test": "node --test"
   }
