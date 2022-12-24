@@ -27,7 +27,7 @@ overrides.push({
   },
   settings: {
     node: {
-      allowModules: ['@textlint/ast-node-types'],
+      allowModules: ['@textlint/ast-node-types', '@textlint/types'],
       tryExtensions
     }
   }
