@@ -57,6 +57,7 @@
     "lint:eslint": "eslint .",
     "lint:fixpack": "npx fixpack --dryRun",
     "lint:prettier": "prettier --check .",
+    "prepare": "tsc",
     "pretest": "tsc",
     "test": "node --test"
   },
