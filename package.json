@@ -27,6 +27,7 @@
     "node": ">=8.3.0"
   },
   "license": "MIT",
+  "main": "./dist/index.js",
   "prettier": {
     "singleQuote": true,
     "trailingComma": "none",
