@@ -21,9 +21,7 @@ add to textlint config the following:
 
 ```json
 {
-  "plugins": [
-    "tsdoc"
-  ]
+  "plugins": ["tsdoc"]
 }
 ```
 
