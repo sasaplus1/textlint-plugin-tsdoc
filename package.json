@@ -1,7 +1,7 @@
 {
   "name": "textlint-plugin-tsdoc",
   "description": "textlint plugin for tsdoc",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "sasa+1 <sasaplus1@gmail.com>",
   "dependencies": {
     "@microsoft/tsdoc": "^0.14.2",
