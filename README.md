@@ -1,6 +1,6 @@
 # textlint-plugin-tsdoc
 
-textlint plugin for [tsdoc](https://tsdoc.org/)
+[textlint](https://textlint.github.io/) plugin for [tsdoc](https://tsdoc.org/)
 
 ## Installation
 
