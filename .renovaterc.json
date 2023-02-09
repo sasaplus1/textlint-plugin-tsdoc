@@ -1,0 +1,11 @@
+{
+  "extends": [
+    "config:base",
+    ":label(renovate)",
+    ":preserveSemverRanges",
+    ":assignee(sasaplus1)",
+    ":timezone(Asia/Tokyo)",
+    "group:definitelyTyped",
+    "group:linters"
+  ]
+}
