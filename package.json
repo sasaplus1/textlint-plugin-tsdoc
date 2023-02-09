@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@textlint/ast-tester": "^13.0.0",
-    "@textlint/types": "^12.2.3",
+    "@textlint/types": "^13.0.0",
     "@tsconfig/strictest": "^1.0.2",
     "@types/node": "^18.11.15",
     "@typescript-eslint/eslint-plugin": "^5.46.1",
