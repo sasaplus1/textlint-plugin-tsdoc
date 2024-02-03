@@ -9,7 +9,7 @@
     "typescript": "^4.9.4"
   },
   "devDependencies": {
-    "@textlint/ast-tester": "^13.0.0",
+    "@textlint/ast-tester": "^14.0.0",
     "@textlint/types": "^13.0.0",
     "@tsconfig/strictest": "^1.0.2",
     "@types/node": "^18.11.15",
