@@ -4,7 +4,7 @@ import type { AnyTxtNode, TxtParentNode } from '@textlint/ast-node-types';
 import { ASTNodeTypes } from '@textlint/ast-node-types';
 import { DocExcerpt, TSDocParser } from '@microsoft/tsdoc';
 
-import { isNonNullable } from './utility';
+import { isNonNullable, isTxtTextNode } from './utility';
 
 /**
  * parse comment as TSDoc
@@ -160,7 +160,9 @@ function traverse(docNode: DocNode, baseNode: AnyTxtNode): AnyTxtNode | null {
       }
     }
 
-    result.raw = children.map((child) => child.value || child.raw).join('');
+    result.raw = children
+      .map((child) => (isTxtTextNode(child) ? child.value : child.raw))
+      .join('');
   }
 
   return result;
