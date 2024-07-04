@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "author": "sasa+1 <sasaplus1@gmail.com>",
   "dependencies": {
-    "@microsoft/tsdoc": "^0.14.2",
+    "@microsoft/tsdoc": "^0.15.0",
     "@textlint/ast-node-types": "^12.2.2",
     "typescript": "^5.0.0"
   },
