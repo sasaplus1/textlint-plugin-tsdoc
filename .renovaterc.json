@@ -9,10 +9,8 @@
   ],
   "packageRules": [
     {
-      "matchPackagePatterns": [
-        "^@textlint/"
-      ],
-      "groupName": "textlint packages"
+      "groupName": "textlint packages",
+      "matchPackageNames": ["/^@textlint//"]
     }
   ]
 }
