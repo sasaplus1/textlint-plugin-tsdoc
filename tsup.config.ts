@@ -5,7 +5,7 @@ export default defineConfig({
   dts: true,
   entry: ['src/index.ts'],
   format: ['cjs', 'esm'],
-  outDir: 'dist'
+  outDir: 'dist',
   sourcemap: true,
-  target: 'esnext',
+  target: 'esnext'
 });

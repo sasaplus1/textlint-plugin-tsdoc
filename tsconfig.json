@@ -1,11 +1,10 @@
 {
   "extends": "@tsconfig/strictest/tsconfig.json",
   "compilerOptions": {
-    "declaration": true,
-    "module": "CommonJS",
-    "outDir": "./dist",
-    "sourceMap": true,
-    "target": "ESNext"
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleResolution": "node",
+    "noEmit": true
   },
   "include": [
     "./src/*.ts"
