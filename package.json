@@ -20,10 +20,23 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-tsdoc": "^0.2.17",
     "npm-run-all2": "^5.0.0",
-    "prettier": "^2.8.1"
+    "prettier": "^2.8.1",
+    "tsup": "^8.5.0"
   },
   "engines": {
     "node": ">=8.3.0"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
   },
   "files": [
     "dist",
@@ -31,6 +44,7 @@
   ],
   "license": "MIT",
   "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "prettier": {
     "singleQuote": true,
     "trailingComma": "none",
@@ -48,17 +62,18 @@
     "url": "https://github.com/sasaplus1/textlint-plugin-tsdoc.git"
   },
   "scripts": {
-    "build": "tsc",
-    "fix": "run-p --print-label fix:*",
+    "build": "tsup",
+    "fix": "run-p -l fix:*",
     "fix:eslint": "eslint --fix .",
     "fix:fixpack": "npx fixpack",
     "fix:prettier": "prettier --write .",
-    "lint": "run-p --print-label lint:*",
+    "lint": "run-p -l lint:*",
     "lint:eslint": "eslint .",
     "lint:fixpack": "npx fixpack --dryRun",
     "lint:prettier": "prettier --check .",
-    "prepare": "tsc",
-    "pretest": "tsc",
+    "lint:tsc": "tsc --noEmit",
+    "prepare": "tsup",
+    "pretest": "npm run build",
     "test": "node --test"
   },
   "types": "./dist/index.d.ts"
