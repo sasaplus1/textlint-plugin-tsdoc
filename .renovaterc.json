@@ -1,13 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
-    ":label(renovate)",
-    ":preserveSemverRanges",
-    ":assignee(sasaplus1)",
-    ":timezone(Asia/Tokyo)",
-    "group:definitelyTyped",
-    "group:linters"
+    "local>sasaplus1/renovate-config:main.json5",
+    "local>sasaplus1/renovate-config:npm.json5",
+    "local>sasaplus1/renovate-config:npm-lib.json5",
+    "local>sasaplus1/renovate-config:automerge-all.json5",
+    ":assignee(sasaplus1)"
   ],
   "packageRules": [
     {
