@@ -9,8 +9,8 @@
     "typescript": "^5.0.0"
   },
   "devDependencies": {
-    "@textlint/ast-tester": "13.2.0",
-    "@textlint/types": "13.2.0",
+    "@textlint/ast-tester": "13.4.1",
+    "@textlint/types": "13.4.1",
     "@tsconfig/strictest": "2.0.5",
     "@types/node": "18.19.115",
     "@typescript-eslint/eslint-plugin": "5.46.1",
